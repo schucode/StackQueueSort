@@ -12,27 +12,36 @@ describe 'Stack' do
   describe 'push' do
 
     it "should be able to push in a new item when empty" do
-      
+      @s.push(:a)
+      expect(@s.top.value).to eq(:a)
     end
 
-    xit "Should be able to push in a new item when non empty" do
-      
+    it "Should be able to push in a new item when non empty" do
+      @s.push(:a)
+      @s.push(:b)
+      expect(@s.top.value).to eq(:b)
     end
 
   end
 
   describe 'shift' do
 
-    xit "remove the item at the start of the que" do
-      
+    it "remove the item at the start of the que" do
+      @s.push(:a)
+      @s.push(:b)
+      expect(@s.peek).to eq(:b)
+      result = @s.pop
+      expect(result).to eq(:b)
+      expect(@s.peek).to eq(:a)
     end
 
   end
 
   describe 'peek' do
 
-    xit "return the item at the start of the que" do
-  
+    it "return the item at the start of the que" do
+      @s.push(:a)
+      expect(@s.peek).to eq(:a)
     end
 
   end
